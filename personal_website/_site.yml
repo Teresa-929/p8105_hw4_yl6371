@@ -1,0 +1,21 @@
+
+name: "yutong-personal-website"
+
+output_dir: "../docs"
+
+navbar:
+  title: "Yutong Li"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Resume"
+      href: resume.html
+  right:
+    - text: "GitHub"
+      href: https://github.com/Teresa-929
+    - text: "Email"
+      href: mailto:yl6371@cumc.columbia.edu
+
+output:
+  html_document:
+    theme: flatly

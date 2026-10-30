@@ -1,0 +1,47 @@
+---
+title: "Resume"
+output: 
+  html_document:
+    theme: flatly
+
+---
+
+# Yutong Li
+
+## Education
+
+**Columbia University**
+Mailman School of Public Health  
+Master of Science in Biostatistics  
+2026 – Present
+
+**Zhejiang University**
+Bachelor's Degree in Pharmacy
+
+## Research Experience
+
+### Undergraduate Research
+
+Zhejiang University
+
+- Investigated the molecular mechanisms of early liver regeneration, focusing on mTOR-mediated translational regulation following 70% partial hepatectomy in a mouse model.
+- Applied Western blotting, polysome profiling, and high-throughput sequencing to examine signaling pathway activation and changes in translational efficiency.
+- Identified rapid activation of the mTOR–S6K–RPS6 signaling pathway and increased translational efficiency of *Tpt1* without significant changes in its mRNA abundance.
+- Investigated the functional role of *Tpt1* in hepatocyte proliferation, demonstrating that its knockdown impaired cell proliferation, colony formation, and cell cycle progression.
+
+## Professional Experience
+
+### Consulting Intern
+
+**CIC Consulting, Shanghai**  
+March 2026 – June 2026
+
+- Conducted epidemiological research and market analysis in the healthcare and pharmaceutical sectors.
+- Developed patient population models to support pharmaceutical market forecasting.
+- Analyzed competitive landscapes and commercial opportunities for healthcare products.
+
+## Techinical Skills
+
+- **Programming:** R, Python
+- **Data Analysis:** Statistical analysis, data visualization, data cleaning
+- **Research:** Epidemiology, pharmaceutical research, healthcare market analysis

@@ -1,0 +1,27 @@
+---
+title: "Home"
+output: 
+  html_document:
+    theme: flatly
+    
+---
+
+# Yutong Li
+
+### MS Student in Biostatistics
+
+**Columbia University Mailman School of Public Health**
+
+Welcome to my personal website!
+
+I am currently pursuing a Master of Science in Biostatistics at Columbia University. I received my bachelor's degree in Pharmacy from Zhejiang University.
+
+## About Me
+
+My background combines pharmaceutical sciences, public health, and quantitative data analysis.
+
+Through my academic training and research experiences, I have developed an interest in using statistical methods to address questions in medicine and public health.
+
+## Explore My Website
+
+Visit the **Resume** page to learn more about my education, research experience, and professional background.
