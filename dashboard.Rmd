@@ -1,0 +1,113 @@
+---
+title: "NYC Weather Dashboard"
+anthor: "Yutong"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(plotly)
+library(flexdashboard)
+library(p8105.datasets)
+data("ny_noaa")
+```
+
+```{r data_cleaning, include=FALSE}
+set.seed(813301)
+
+weather_df = ny_noaa |>
+  mutate(
+    tmax = as.numeric(tmax) / 10,
+    tmin = as.numeric(tmin) / 10,
+    month = lubridate::month(date, label = TRUE)
+  ) |> 
+  filter(
+    !is.na(tmax),
+    !is.na(tmin),
+    lubridate::year(date) >= 2010,
+    lubridate::year(date) <= 2020
+  ) |> 
+  slice_sample(n = 5000)
+```
+
+
+Column
+-----------------------------------------------------------------------
+
+### Maximum vs. Minimum Temperature
+
+```{r scatterplot}
+weather_df |>
+  plot_ly(
+    x = ~tmin,
+    y = ~tmax,
+    type = "scatter",
+    mode = "markers",
+    color = ~month,
+    alpha = 0.5
+  ) |>
+  layout(
+    xaxis = list(title = "Minimum Temperature (°C)"),
+    yaxis = list(title = "Maximum Temperature (°C)")
+  )
+```
+
+### Monthly Maximum Temperature Distribution
+
+```{r boxplot}
+weather_df |> 
+  plot_ly(
+    x = ~month,
+    y = ~tmax,
+    type = "box",
+    color = ~month
+  ) |> 
+  layout(
+    xaxis = list(title = "Month"),
+    yaxis = list(title = "Maximum Temperature (°C)"),
+    showlegend = FALSE
+  )
+```
+
+Column
+-----------------------------------------------------------------------
+
+### Monthly Average Maximum Temperature in 2010
+
+```{r lineplot}
+monthly_weather = ny_noaa |>
+  mutate(
+    tmax = as.numeric(tmax) / 10,
+    year = lubridate::year(date),
+    month_num = lubridate::month(date)
+  ) |> 
+  filter(
+    year == 2010,
+    !is.na(tmax)
+  ) |> 
+  group_by(month_num) |> 
+  summarize(
+    mean_tmax = mean(tmax),
+    .groups = "drop"
+  )
+
+monthly_weather |> 
+  plot_ly(
+    x = ~month_num,
+    y = ~mean_tmax,
+    type = "scatter",
+    mode = "lines+markers"
+  ) |> 
+  layout(
+    xaxis = list(
+      title = "Month",
+      tickmode = "linear",
+      dtick = 1
+    ),
+    yaxis = list(tittle = "Average Maxium Temperature(°C)")
+  )
+```
+
